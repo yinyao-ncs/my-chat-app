@@ -1,6 +1,7 @@
 import React from "react";
 import RegexChatBox from "./components/RegexChatBox";
-import API1ChatBox from "./components/API1ChatBox";
+import AzureChatBox from "./components/AzureChatBox";
+import PowerAutomateChatBox from "./components/PowerAutomateChatBox";
 
 function App() {
 	return (
@@ -11,7 +12,8 @@ function App() {
 				</h1>
 				<div className="flex flex-wrap justify-center gap-4">
 					<RegexChatBox />
-					<API1ChatBox />
+					<AzureChatBox />
+					<PowerAutomateChatBox />
 					{/* Add more chat boxes as needed */}
 				</div>
 			</div>

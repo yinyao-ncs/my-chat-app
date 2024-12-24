@@ -43,7 +43,7 @@ export const filterWithRegex = (text) => {
 	let filteredText = text;
 
 	// Process NRIC first to avoid interference
-	filteredText = filteredText.replace(patterns.nric, "<PII:NRIC>");
+	filteredText = filteredText.replace(patterns.nric, "<NRIC>");
 
 	// Process names with additional checks
 	filteredText = filteredText.replace(patterns.name, (match) => {
@@ -58,14 +58,14 @@ export const filterWithRegex = (text) => {
 			return match;
 		}
 
-		return "<PII:NAME>";
+		return "<NAME>";
 	});
 
 	// Process remaining patterns
 	["email", "creditCard", "phone"].forEach((type) => {
 		filteredText = filteredText.replace(
 			patterns[type],
-			`<PII:${type.toUpperCase()}>`
+			`<${type.toUpperCase()}>`
 		);
 	});
 
